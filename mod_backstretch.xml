@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension
+    type="module"
+    version="3.1"
+    client="site"
+    method="upgrade">
+    <name>mod_backstretch</name>
+    <author>J-Guru.com</author>
+    <creationDate>Oct 2014</creationDate>
+    <copyright>Copyright (C) 2014 J-Guru.com. All rights reserved.</copyright>
+    <license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+    <authorEmail>eitamar@j-guru.com</authorEmail>
+    <authorUrl>www.j-guru.com</authorUrl>
+    <version>1.0.0</version>
+    <description>MOD_BACKSTRETCH_XML_DESCRIPTION</description>
+    <scriptfile>script.php</scriptfile>
+    <files>
+        <filename module="mod_backstretch">mod_backstretch.php</filename>
+        <filename>helper.php</filename>
+        <filename>index.html</filename>
+        <folder>tmpl</folder>
+    </files>
+    <languages folder="language">
+        <language tag="en-GB" folder="en-GB">en-GB.mod_backstretch.ini</language>
+        <language tag="en-GB" folder="en-GB">en-GB.mod_backstretch.sys.ini</language>
+    </languages>
+    
+    <media folder="media" destination="mod_backstretch">
+                <filename>index.html</filename>
+                <folder>images</folder>
+                <folder>js</folder>
+		<folder>css</folder>
+    </media>
+    <help key="JHELP_EXTENSIONS_MODULE_MANAGER_FEED_DISPLAY" />
+    <config>
+        <fields name="params">
+            <fieldset name="basic">
+                
+                <field name="slideshow_duration" default="4"
+                    type="text" class="input-mini"
+                    label="MOD_BACKSTRETCH_FIELD_SLIDESHOW_DURATION_LABEL"
+                    description="MOD_BACKSTRETCH_FIELD_SLIDESHOW_DURATION_DESC" />
+                
+                <field name="fade_speed" type="radio" class="btn-group "
+                    default="normal" 
+                    label="MOD_BACKSTRETCH_FIELD_SLIDESHOW_FADE_LABEL"
+                    description="MOD_BACKSTRETCH_FIELD_SLIDESHOW_FADE_DESC">
+                    <option value="fast">FAST</option>
+                    <option value="normal">Normal</option>
+                    <option value="slow">Slow</option>
+                </field>
+                
+                <field name="centerX" type="radio" class="btn-group btn-group-yesno"
+                    default="1" 
+                    label="MOD_BACKSTRETCH_FIELD_SLIDESHOW_CENTERX_LABEL"
+                    description="MOD_BACKSTRETCH_FIELD_SLIDESHOW_CENTERX_DESC">
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+                
+                <field name="centerY" type="radio" class="btn-group btn-group-yesno"
+                    default="1" 
+                    label="MOD_BACKSTRETCH_FIELD_SLIDESHOW_CENTERY_LABEL"
+                    description="MOD_BACKSTRETCH_FIELD_SLIDESHOW_CENTERY_DESC">
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+                
+                <field name="list_images" type="Repeatable" icon="list" 
+                        description="MOD_BACKSTRETCH_FIELD_IMAGES_DESC" 
+                        label="MOD_BACKSTRETCH_FIELD_IMAGES_LABEL" 
+                        default="{'title':[],'src':[],'description':[]}">
+                    
+                    <fields name="params">
+                        
+                        <fieldset hidden="true" name="list_images_modal" repeat="true">
+                            
+                            <field name="title"
+                                label="MOD_BACKSTRETCH_FIELD_IMAGE_TITLE_LABEL"
+                                size="30"
+                                type="text" />
+                            
+                            <field name="src"
+                                label="MOD_BACKSTRETCH_FIELD_IMAGE_SRC_LABEL"
+                                description="MOD_BACKSTRETCH_FIELD_IMAGE_SRC_LABEL" 
+                                
+                                type="filelist"
+                                directory="media/mod_backstretch/images"
+                                exclude="index.html"
+                                hide_default="true"
+                                hide_none="true" />
+                            
+                            <field name="description"
+                                label="MOD_BACKSTRETCH_FIELD_IMAGE_DESCRIPTION_LABEL"
+                                size="30"
+                                type="textarea" />
+                            
+                        </fieldset>
+                        
+                    </fields>
+                    
+                </field>
+                
+            </fieldset>
+            
+            <fieldset name="advanced">
+                <field
+                    name="layout"
+                    type="modulelayout"
+                    label="JFIELD_ALT_LAYOUT_LABEL"
+                    description="JFIELD_ALT_MODULE_LAYOUT_DESC" />
+
+                <field
+                    name="moduleclass_sfx"
+                    type="textarea" rows="3"
+                    label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL"
+                    description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC" />
+
+                <field
+                    name="cache"
+                    type="list"
+                    default="1"
+                    label="COM_MODULES_FIELD_CACHING_LABEL"
+                    description="COM_MODULES_FIELD_CACHING_DESC">
+                    <option
+                        value="1">JGLOBAL_USE_GLOBAL</option>
+                    <option
+                        value="0">COM_MODULES_FIELD_VALUE_NOCACHING</option>
+                </field>
+
+                <field
+                    name="cache_time"
+                    type="text"
+                    default="900"
+                    label="COM_MODULES_FIELD_CACHE_TIME_LABEL"
+                    description="COM_MODULES_FIELD_CACHE_TIME_DESC" />
+            </fieldset>
+        </fields>
+    </config>
+</extension>
