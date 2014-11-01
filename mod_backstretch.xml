@@ -11,7 +11,7 @@
     <license>GNU General Public License version 2 or later; see LICENSE.txt</license>
     <authorEmail>eitamar@j-guru.com</authorEmail>
     <authorUrl>www.j-guru.com</authorUrl>
-    <version>1.0.0</version>
+    <version>1.0.1</version>
     <description>MOD_BACKSTRETCH_XML_DESCRIPTION</description>
     <scriptfile>script.php</scriptfile>
     <files>
